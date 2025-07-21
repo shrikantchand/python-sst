@@ -4,21 +4,21 @@ from scipy.interpolate import interp1d
 from numpy import quantile
 
 def sst(x, Fs, hlength=None, hop=1, n=None, hf=np.inf, lf=0, ths=1):
-% Computes the synchrosqueezing transform of the signal x.
-% INPUT
-%    x          :  Signal (x should be a column vector).
-%    Fs         :  Sampling rate of x.
-%    hlength    :  Window length (in samples).
-%    hop        :  Calculate the fft every hop samples, starting at 1.
-%    n          :  Number of pixels in the frequency axis.
-%    lf         :  Crop output to display only frequencies larger than lf.
-%    hf         :  Crop output to display only frequencies less than hf.
-%    ths        :  Fraction of values to reassign. 
-% OUTPUT
-%    sst        :  The SST of the signal x. 
-%    tfr        :  The STFT of the signal x.
-%    frequency  :  The frequency axis for output.
-% Adapted from the MATLAB implementation by John Malik (jrvmalik) into Python by Shrikant Chand (shrikant.chand@duke.edu) and Po-Ying Chen in 04.2024.
+# Computes the synchrosqueezing transform of the signal x.
+# INPUT
+#    x          :  Signal (x should be a column vector).
+#    Fs         :  Sampling rate of x.
+#    hlength    :  Window length (in samples).
+#    hop        :  Calculate the fft every hop samples, starting at 1.
+#    n          :  Number of pixels in the frequency axis.
+#    lf         :  Crop output to display only frequencies larger than lf.
+#    hf         :  Crop output to display only frequencies less than hf.
+#    ths        :  Fraction of values to reassign. 
+# OUTPUT
+#    sst        :  The SST of the signal x. 
+#    tfr        :  The STFT of the signal x.
+#    frequency  :  The frequency axis for output.
+# Adapted from the MATLAB implementation by John Malik (jrvmalik) into Python by Shrikant Chand (shrikant.chand@duke.edu) and Po-Ying Chen in 04.2024.
 
     if hlength is None:
         raise ValueError("Select a window length.")
