@@ -1,3 +1,8 @@
+import numpy as np
+from scipy.fft import fft
+from scipy.interpolate import interp1d
+from numpy import quantile
+
 def sst(x, Fs, hlength=None, hop=1, n=None, hf=np.inf, lf=0, ths=1):
 % Computes the synchrosqueezing transform of the signal x.
 % INPUT
