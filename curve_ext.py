@@ -1,7 +1,7 @@
 import numpy as np
 
 def curve_ext(P, lambda_):
-# Extracts a ridge from a TFR.
+# Extracts a ridge from a TFR using dynamic programming.
 # INPUT
 #    P          :  TFR with row dimension as time and column dimension as frequency.
 #    lambda_    :  Ridge extraction bandwidth.
